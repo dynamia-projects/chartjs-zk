@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<language-addon>
+    <addon-name>chartjs</addon-name>
+    <language-name>xul/html</language-name>
+  
+    <component>
+        <component-name>chartjs</component-name>
+        <component-class>tools.dynamia.chartjs.Chartjs</component-class>
+        <widget-class>tools.dynamia.chartjs.Chartjs</widget-class>
+        <mold>
+            <mold-name>default</mold-name>
+            <mold-uri>mold/chartjs.js</mold-uri>
+            <css-uri>css/chartjs.css.dsp</css-uri>
+        </mold>
+    </component>
+</language-addon>

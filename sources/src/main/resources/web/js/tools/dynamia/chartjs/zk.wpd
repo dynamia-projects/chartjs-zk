@@ -1,0 +1,4 @@
+<package name="tools.dynamia.chartjs" language="xul/html" depends="zul,zul.wgt">
+    <script src="lib/Chart.bundle.min.js"/>
+    <widget name="Chartjs"/>
+</package>
