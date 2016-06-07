@@ -17,9 +17,17 @@ tools.dynamia.chartjs.Chartjs = zk.$extends(zk.Widget, {
     },
     setData: function (data) {
         if (this._data != data) {
-            this._data = data;
-            if (this.desktop)
+            if (this.chart) {
+                this._data.labels = data.labels;
+                this._data.datasets = data.datasets;
+                this.chart.update();
+            } else {
+                this._data = data;
+            }
+            if (this.desktop) {
                 this.$n().innerHTML = zUtl.encodeXML(data);
+            }
+
         }
     },
     getOptions: function () {
@@ -28,8 +36,9 @@ tools.dynamia.chartjs.Chartjs = zk.$extends(zk.Widget, {
     setOptions: function (options) {
         if (this._options != options) {
             this._options = options;
-            if (this.desktop)
+            if (this.desktop) {
                 this.$n().innerHTML = zUtl.encodeXML(options);
+            }
         }
     },
     bind_: function () {
@@ -42,6 +51,9 @@ tools.dynamia.chartjs.Chartjs = zk.$extends(zk.Widget, {
                 options: this.getOptions()
             });
         }
+    },
+    unbind_: function () {
+        this.$supers(tools.dynamia.chartjs.Chartjs, 'unbind_', arguments);
     }
 
 });

@@ -23,6 +23,30 @@ limitations under the License.
         <component-name>chartjs</component-name>
         <component-class>tools.dynamia.chartjs.Chartjs</component-class>
         <widget-class>tools.dynamia.chartjs.Chartjs</widget-class>
+        <annotation>
+            <annotation-name>default-bind</annotation-name>
+            <property-name>data</property-name>
+            <attribute>
+                <attribute-name>access</attribute-name>
+                <attribute-value>both</attribute-value>
+            </attribute>
+            <attribute>
+                <attribute-name>save-when</attribute-name>
+                <attribute-value>self.onDataChange</attribute-value>
+            </attribute>
+        </annotation>
+        <annotation>
+            <annotation-name>ZKBIND</annotation-name>
+            <property-name>data</property-name>
+            <attribute>
+                <attribute-name>ACCESS</attribute-name>
+                <attribute-value>both</attribute-value>
+            </attribute>
+            <attribute>
+                <attribute-name>SAVE_EVENT</attribute-name>
+                <attribute-value>onDataChange</attribute-value>
+            </attribute>
+        </annotation>
         <mold>
             <mold-name>default</mold-name>
             <mold-uri>mold/chartjs.js</mold-uri>

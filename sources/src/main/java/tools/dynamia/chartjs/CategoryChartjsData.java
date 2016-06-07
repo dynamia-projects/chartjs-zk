@@ -24,7 +24,7 @@ public class CategoryChartjsData extends ChartjsData {
     private Dataset<Number> dataset;
 
     public CategoryChartjsData() {
-        dataset = new Dataset<>("Values");
+        dataset = new Dataset<Number>("Values");
         addDataset(dataset);
     }
 

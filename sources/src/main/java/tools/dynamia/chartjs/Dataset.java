@@ -94,7 +94,7 @@ public class Dataset<T> extends LazyJSONObject {
 
     public Dataset<T> addData(T data) {
         if (this.data == null) {
-            this.data = new ArrayList<>();
+            this.data = new ArrayList<T>();
         }
         this.data.add(data);
         return this;
@@ -243,7 +243,7 @@ public class Dataset<T> extends LazyJSONObject {
 
     public void addBackgroundColor(String backgroundColor) {
         if (backgroundColors == null) {
-            backgroundColors = new ArrayList<>();
+            backgroundColors = new ArrayList<String>();
         }
         backgroundColors.add(backgroundColor);
     }

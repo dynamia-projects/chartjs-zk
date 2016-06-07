@@ -15,6 +15,8 @@
  */
 package tools.dynamia.chartjs;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,18 +26,31 @@ import java.util.List;
  */
 public class ChartjsData extends LazyJSONObject {
 
-    private List<String> labels = new ArrayList<>();
-    private List<Dataset> datasets = new ArrayList<>();
+    private final PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
+    private final List<String> labels = new ArrayList<String>();
+    private final List<Dataset> datasets = new ArrayList<Dataset>();
+
+    @Override
+    public void init() {
+        put("labels", labels);
+        put("datasets", datasets);
+
+        for (Dataset dataset : datasets) {
+            dataset.init();
+        }
+    }
 
     public void addLabel(String label) {
         labels.add(label);
+        propertyChangeSupport.firePropertyChange("labels", null, this.labels);
     }
 
     public void setLabels(String... labels) {
         if (labels != null) {
             for (String label : labels) {
-                addLabel(label);
+                this.labels.add(label);
             }
+            propertyChangeSupport.firePropertyChange("labels", null, this.labels);
         }
     }
 
@@ -45,17 +60,52 @@ public class ChartjsData extends LazyJSONObject {
 
     public void addDataset(Dataset dataset) {
         datasets.add(dataset);
+        fireDatasetChange();
     }
 
     public List<Dataset> getDatasets() {
         return datasets;
     }
 
-    @Override
-    public void init() {
-        put("labels", labels);
-        put("datasets", datasets);
-
-        datasets.forEach(d -> d.init());
+    public Dataset getDataset(String label) {
+        Dataset result = null;
+        if (label != null && datasets != null) {
+            for (Dataset dataset : datasets) {
+                if (label.equals(dataset.getLabel())) {
+                    result = dataset;
+                }
+            }
+        }
+        return result;
     }
+
+    public void removeDatasets() {
+        if (datasets != null) {
+            datasets.clear();
+            fireDatasetChange();
+        }
+    }
+
+    public void removeLabels() {
+        if (labels != null) {
+            labels.clear();
+        }
+    }
+
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        propertyChangeSupport.addPropertyChangeListener(listener);
+    }
+
+    public void removePropertyChangeListener(PropertyChangeListener listener) {
+        propertyChangeSupport.removePropertyChangeListener(listener);
+    }
+
+    public void notifyChange() {
+        fireDatasetChange();
+    }
+
+    private void fireDatasetChange() {
+        propertyChangeSupport.firePropertyChange("dataset", null, this.datasets);
+    }
+
 }

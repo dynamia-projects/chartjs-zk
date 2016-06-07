@@ -21,10 +21,15 @@ limitations under the License.
     <artifactId>chartjs-zk</artifactId>
     <name>Chartjs-ZK</name>
     <version>0.1</version>
-    <packaging>jar</packaging>
-    <organization>Dynamia Soluciones IT</organization>
+    <packaging>jar</packaging>    
     <url>www.dynamia.tools/chartjs-zk</url>
+    <description>Chartjs ZK integration library</description>
     <inceptionYear>2016</inceptionYear>
+    
+    <organization>
+        <name>Dynamia Soluciones IT</name>
+        <url>www.dynamiasoluciones.com</url>
+    </organization>
     
     <developers>
         <developer>
@@ -48,9 +53,11 @@ limitations under the License.
     <properties>
         <user>Mario Serrano Leones</user>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
         <netbeans.hint.license>apache20</netbeans.hint.license>
+        
+        <zk.version>8.0.1.1</zk.version> <!-- 7.0.3 -->
     </properties>
     
     <dependencies>
@@ -58,16 +65,14 @@ limitations under the License.
         <dependency>
             <groupId>org.zkoss.zk</groupId>
             <artifactId>zk</artifactId>
-            <version>7.0.3</version>
+            <version>${zk.version}</version>
             <scope>provided</scope>
-        </dependency>
-
-    
+        </dependency>    
         <dependency>
             <groupId>org.zkoss.zk</groupId>
             <artifactId>zul</artifactId>
             <scope>provided</scope>
-            <version>7.0.3</version>        
+            <version>${zk.version}</version>        
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -76,5 +81,5 @@ limitations under the License.
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <description>Chartjs ZK integration library</description>
+  
 </project>

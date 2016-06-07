@@ -15,9 +15,12 @@
  */
 package tools.dynamia.chartjs;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.IOException;
 import org.zkoss.lang.Objects;
 import org.zkoss.zk.ui.HtmlBasedComponent;
+import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.sys.ContentRenderer;
 
 /**
@@ -35,6 +38,8 @@ public class Chartjs extends HtmlBasedComponent {
     public static final String TYPE_RADAR = "radar";
     public static final String TYPE_POLAR_AREA = "polarArea";
     public static final String TYPE_BUBBLE = "bubble";
+
+    public static final String ON_DATA_CHANGE = "onDataChange";
 
     private String type;
     private ChartjsData data;
@@ -74,9 +79,11 @@ public class Chartjs extends HtmlBasedComponent {
     }
 
     public void setData(ChartjsData data) {
+        LazyJSONObject.init(data);
         if (!Objects.equals(this.data, data)) {
             this.data = data;
-            smartUpdate("data", data);
+            initListener();
+            fireDatachange();
         }
     }
 
@@ -88,6 +95,7 @@ public class Chartjs extends HtmlBasedComponent {
     }
 
     public void setOptions(ChartjsOptions options) {
+        LazyJSONObject.init(options);
         if (!Objects.equals(this.options, options)) {
             this.options = options;
             smartUpdate("options", options);
@@ -113,18 +121,27 @@ public class Chartjs extends HtmlBasedComponent {
         }
     }
 
+    private void fireDatachange() {
+        smartUpdate("data", this.data);
+        Events.postEvent(ON_DATA_CHANGE, this, this.data);
+    }
+
+    private void initListener() {
+        if (data != null) {
+            data.addPropertyChangeListener(new PropertyChangeListener() {
+                @Override
+                public void propertyChange(PropertyChangeEvent evt) {
+                    fireDatachange();
+                }
+            });
+        }
+    }
+
     protected void render(ContentRenderer renderer, String name, LazyJSONObject value) throws IOException {
         if (value != null) {
             value.init();;
         }
         super.render(renderer, name, value);
-    }
-
-    protected void smartUpdate(String attr, LazyJSONObject value) {
-        if (value != null) {
-            value.init();
-        }
-        super.smartUpdate(attr, value);
     }
 
     public static Number randomScallingFactor() {
@@ -138,4 +155,5 @@ public class Chartjs extends HtmlBasedComponent {
     public static String randomColor() {
         return "rgba(" + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ",.7)";
     }
+
 }

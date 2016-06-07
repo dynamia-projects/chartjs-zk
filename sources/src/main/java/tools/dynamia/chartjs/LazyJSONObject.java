@@ -23,6 +23,12 @@ import org.zkoss.json.JSONObject;
  */
 public class LazyJSONObject extends JSONObject {
 
+    static void init(LazyJSONObject data) {
+        if (data != null) {
+            data.init();
+        }
+    }
+
     public void init() {
 
     }

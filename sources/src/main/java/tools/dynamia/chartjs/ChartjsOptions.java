@@ -47,7 +47,7 @@ public class ChartjsOptions extends LazyJSONObject {
     @Override
     public void init() {
         if (title != null) {
-            Map<String, Object> titleMap = new HashMap<>();
+            Map<String, Object> titleMap = new HashMap<String, Object>();
             titleMap.put("text", title);
             titleMap.put("display", true);
             put("title", titleMap);
