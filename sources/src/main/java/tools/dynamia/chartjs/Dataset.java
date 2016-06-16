@@ -41,6 +41,7 @@ public class Dataset<T> extends LazyJSONObject {
 
     private boolean hidden;
     private boolean fill = true;
+    private ChartjsColorPalette colorPalette = new ChartjsColorPalette();
 
     public Dataset() {
     }
@@ -52,6 +53,9 @@ public class Dataset<T> extends LazyJSONObject {
     public Dataset(String label, List<T> data) {
         this.label = label;
         this.data = data;
+        for (T t : data) {
+            addBackgroundColor(colorPalette.nextColor());
+        }
     }
 
     public Dataset(String label, String backgroundColor, List<T> data) {
@@ -97,6 +101,7 @@ public class Dataset<T> extends LazyJSONObject {
             this.data = new ArrayList<T>();
         }
         this.data.add(data);
+        addBackgroundColor(colorPalette.nextColor());
         return this;
     }
 
@@ -201,6 +206,16 @@ public class Dataset<T> extends LazyJSONObject {
         return this;
     }
 
+    public ChartjsColorPalette getColorPalette() {
+        return colorPalette;
+    }
+
+    public void setColorPalette(ChartjsColorPalette colorPalette) {
+        if (colorPalette != null) {
+            this.colorPalette = colorPalette;
+        }
+    }
+
     @Override
     public void init() {
         if (label != null) {
@@ -241,11 +256,11 @@ public class Dataset<T> extends LazyJSONObject {
         put("fill", fill);
     }
 
-    public void addBackgroundColor(String backgroundColor) {
+    public void addBackgroundColor(String color) {
         if (backgroundColors == null) {
             backgroundColors = new ArrayList<String>();
         }
-        backgroundColors.add(backgroundColor);
+        backgroundColors.add(color);
     }
 
 }

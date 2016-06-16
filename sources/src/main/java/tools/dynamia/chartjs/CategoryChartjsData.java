@@ -37,7 +37,8 @@ public class CategoryChartjsData extends ChartjsData {
     }
 
     public void add(String label, Number value) {
-        CategoryChartjsData.this.add(label, value, null);
+        addLabel(label);
+        dataset.addData(value);
     }
 
 }
