@@ -27,7 +27,7 @@ Just add **chartjs-zk-xx.jar** to your project dependencies:
 
 **Gradle**
 ```bash
-compile "tools.dynamia:chartjs-zk:0.9"
+compile "tools.dynamia.chartjs:chartjs-zk:0.9"
 ```
 
 ##Usage
