@@ -11,7 +11,7 @@ This is a regular maven project, download and build it using the following comma
 mvn clean install
 ```
 
-##Instalation
+##Installation
 
 Just add **chartjs-zk-xx.jar** to your project dependencies:
 
