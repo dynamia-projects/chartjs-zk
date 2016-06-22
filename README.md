@@ -100,5 +100,5 @@ ChartjsData class follow the same model as **chartjs** JSON data but with helper
 Chartjs-ZK is available under the [Apache 2 License](https://github.com/dynamia-projects/chartjs-zk/blob/master/LICENSE.md).
 
 ##Want contribute?
-Pleas read [Contributing Guidelines](https://github.com/dynamia-projects/chartjs-zk/blob/master/CONTRIBUTING.md)
+Please read [Contributing Guidelines](https://github.com/dynamia-projects/chartjs-zk/blob/master/CONTRIBUTING.md)
 
