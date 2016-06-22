@@ -1,6 +1,6 @@
 # Chart.js for ZK
 
-This library let you use Chart.js framework in ZK application using pure Java or ZUL.
+This library let you use Chart.js v2.1.4 (https://github.com/chartjs/Chart.js) framework in ZK application using pure Java or ZUL.
 
 ##Bulding
 
@@ -13,21 +13,91 @@ mvn clean install
 
 ##Instalation
 
-Just add **chartjs-zk.jar** to your project dependencies:
+Just add **chartjs-zk-xx.jar** to your project dependencies:
 
 **Maven**
+
 ```xml
 <dependency>
     <groupId>tools.dynamia.chartjs</groupId>
     <artifactId>chartjs-zk</artifactId>
-    <version>0.1</version>
+    <version>0.9</version>
 </dependency>
 ```
 
 **Gradle**
 ```bash
-compile "tools.dynamia:chartjs-zk:0.1"
+compile "tools.dynamia:chartjs-zk:0.9"
 ```
 
+##Usage
 
+From **zul**
+```xml
+<chartjs type="pie" title="My Charts" data="@bind(vm.chartData)"/>
+```
+
+```java
+public class PieChartViewModel{
+    
+    public ChartjsData getChartData(){
+        CategoryChartjsData chartData = new CategoryChartjsData();
+        chartData.add("2014", 1030);
+        chartData.add("2015", 200);
+        chartData.add("2016", 3500);
+        return chartData;
+    }
+}
+```
+
+From **java**
+
+```java
+import tools.dynamia.chartjs.*;
+import org.zkoss.zul.*
+
+public class PieChart{
+
+    public void init(){
+        Chartjs chart = new Chartjs();
+        chart.setType(Chartjs.TYPE_PIE);
+        chart.setTitle("My Chartjs");
+        chart.setData(getChartData());
+        
+        Window window = new Window();
+        window.appendChild(chart);
+        window.doModal();
+        
+    }
+    
+    public ChartjsData getChartData(){
+        CategoryChartjsData chartData = new CategoryChartjsData();
+        chartData.add("2014", 1030);
+        chartData.add("2015", 200);
+        chartData.add("2016", 3500);
+        return chartData;
+    }
+}
+```
+
+ChartjsData class follow the same model as **chartjs** JSON data but with helper methods. See Chartjs documentation http://www.chartjs.org/docs/
+
+
+
+##Supported Chart Types
+
+- bar
+- horizontalBar
+- line
+- pie
+- scatter
+- doughnut
+- radar
+- polarArea
+- bubble
+
+##Want contribute?
+- Open an issue
+- Test it in your own projects
+- Submit patches
 
