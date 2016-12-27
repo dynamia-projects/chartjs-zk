@@ -20,7 +20,6 @@ limitations under the License.
     <groupId>tools.dynamia.chartjs</groupId>
     <artifactId>chartjs-zk</artifactId>
     <name>Chartjs-ZK</name>
-    <version>0.9</version>
     <packaging>jar</packaging>    
     <url>www.dynamia.tools/chartjs-zk</url>
     <description>Chartjs ZK integration library</description>
@@ -82,4 +81,5 @@ limitations under the License.
         </dependency>
     </dependencies>
   
+    <version>1.0.0</version>
 </project>
