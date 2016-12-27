@@ -21,13 +21,13 @@ Just add **chartjs-zk-xx.jar** to your project dependencies:
 <dependency>
     <groupId>tools.dynamia.chartjs</groupId>
     <artifactId>chartjs-zk</artifactId>
-    <version>0.9</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
 **Gradle**
 ```bash
-compile "tools.dynamia.chartjs:chartjs-zk:0.9"
+compile "tools.dynamia.chartjs:chartjs-zk:1.0.0"
 ```
 
 ##Usage
