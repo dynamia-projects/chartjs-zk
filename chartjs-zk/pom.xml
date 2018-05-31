@@ -17,7 +17,7 @@
 	<url>www.dynamia.tools/chartjs-zk</url>
 	<description>Chartjs ZK integration library</description>
 	<inceptionYear>2016</inceptionYear>
-	<version>1.0.0</version>
+	<version>2.0.0</version>
 
 	<organization>
 		<name>Dynamia Soluciones IT</name>
@@ -50,7 +50,7 @@
 		<maven.compiler.target>1.6</maven.compiler.target>
 		<netbeans.hint.license>apache20</netbeans.hint.license>
 
-		<zk.version>8.0.1.1</zk.version> <!-- 7.0.3 -->
+		<zk.version>8.5.0</zk.version> <!-- 7.0.3 -->
 	</properties>
 
 	<dependencies>
