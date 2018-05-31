@@ -10,3 +10,5 @@ logs/
 *.log
 *.log.*
 nbactions.xml
+*.iml
+.idea

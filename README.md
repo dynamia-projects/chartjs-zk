@@ -1,8 +1,8 @@
 # Chart.js for ZK
 
-This library let you use Chart.js v2.1.4 (https://github.com/chartjs/Chart.js) framework in ZK application using pure Java or ZUL. Complete Chartjs-ZK documentation at www.dynamia.tools/chartjs-zk
+This library let you use Chart.js v2.7.2 (https://github.com/chartjs/Chart.js) framework in ZK application using pure Java or ZUL. Complete Chartjs-ZK documentation at www.dynamia.tools/chartjs-zk
 
-##Bulding
+## Bulding
 
 This is a regular maven project, download and build it using the following command:
 
@@ -11,7 +11,7 @@ This is a regular maven project, download and build it using the following comma
 mvn clean install
 ```
 
-##Installation
+## Installation
 
 Just add **chartjs-zk-xx.jar** to your project dependencies:
 
@@ -21,7 +21,7 @@ Just add **chartjs-zk-xx.jar** to your project dependencies:
 <dependency>
     <groupId>tools.dynamia.chartjs</groupId>
     <artifactId>chartjs-zk</artifactId>
-    <version>1.0.0</version>
+    <version>2.0.0</version>
 </dependency>
 ```
 
@@ -84,21 +84,23 @@ ChartjsData class follow the same model as **chartjs** JSON data but with helper
 
 
 
-##Supported Chart Types
+## Supported Chart Types
 
-- bar
-- horizontalBar
-- line
-- pie
-- scatter
-- doughnut
-- radar
-- polarArea
-- bubble
+ - bar
+ - horizontalBar
+ - line
+ - pie
+ - scatter
+ - doughnut
+ - radar
+ - polarArea
+ - bubble 
 
-##License
+.
+## License
+
 Chartjs-ZK is available under the [Apache 2 License](https://github.com/dynamia-projects/chartjs-zk/blob/master/LICENSE.md).
 
-##Want contribute?
+## Want contribute?
 Please read [Contributing Guidelines](https://github.com/dynamia-projects/chartjs-zk/blob/master/CONTRIBUTING.md)
 
