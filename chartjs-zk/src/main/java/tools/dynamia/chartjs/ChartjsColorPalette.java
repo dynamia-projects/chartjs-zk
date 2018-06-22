@@ -17,7 +17,7 @@ package tools.dynamia.chartjs;
 
 /**
  *
- * @author mario
+ * @author Mario Serrano Leones
  */
 public class ChartjsColorPalette {
 

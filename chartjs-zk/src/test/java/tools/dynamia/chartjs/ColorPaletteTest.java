@@ -20,7 +20,7 @@ import org.junit.Test;
 
 /**
  *
- * @author mario
+ * @author Mario Serrano Leones
  */
 public class ColorPaletteTest {
 
