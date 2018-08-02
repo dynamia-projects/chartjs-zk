@@ -1,6 +1,6 @@
 # Chart.js for ZK
 
-This library let you use Chart.js v2.7.2 (https://github.com/chartjs/Chart.js) framework in ZK application using pure Java or ZUL. 
+This library let you use Chart.js v2.7.2 (https://github.com/chartjs/Chart.js) framework in ZK application using pure Java or ZUL. Complete Chartjs-ZK documentation at www.dynamia.tools/chartjs-zk
 
 ## Bulding
 
