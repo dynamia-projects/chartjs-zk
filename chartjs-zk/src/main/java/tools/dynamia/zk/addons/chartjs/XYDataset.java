@@ -13,39 +13,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package tools.dynamia.chartjs;
+package tools.dynamia.zk.addons.chartjs;
 
-import java.io.Serializable;
-import org.zkoss.json.JSONObject;
+import java.util.List;
 
 /**
  *
  * @author Mario Serrano Leones
  */
-public class Coordinate extends JSONObject implements Serializable {
+public class XYDataset extends Dataset<Coordinate> {
 
-    public Coordinate() {
+    public XYDataset() {
     }
 
-    public Coordinate(Number x, Number y) {
-        setX(x);
-        setY(y);
+    public XYDataset(String label) {
+        super(label);
     }
 
-    public Number getX() {
-        return (Number) get("x");
+    public XYDataset(String label, List<Coordinate> data) {
+        super(label, data);
     }
 
-    public void setX(Number x) {
-        put("x", x);
+    public XYDataset(String label, String backgroundColor, List<Coordinate> data) {
+        super(label, backgroundColor, data);
     }
 
-    public Number getY() {
-        return (Number) get("y");
+    public XYDataset addData(Number x, Number y) {
+        super.addData(new Coordinate(x, y));
+        return this;
     }
 
-    public void setY(Number y) {
-        put("y", y);
+    public XYDataset addData(Number x, Number y, Number r) {
+        super.addData(new BubbleCoordinate(x, y, r));
+        return this;
     }
 
 }

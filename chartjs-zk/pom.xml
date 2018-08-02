@@ -10,11 +10,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>tools.dynamia.chartjs</groupId>
+	<groupId>tools.dynamia.zk.addons</groupId>
 	<artifactId>chartjs-zk</artifactId>
 	<name>Chartjs-ZK</name>
 	<packaging>jar</packaging>
-	<url>www.dynamia.tools/chartjs-zk</url>
+	<url>www.dynamia.tools/zk-addons</url>
 	<description>Chartjs ZK integration library</description>
 	<inceptionYear>2016</inceptionYear>
 	<version>2.0.0</version>

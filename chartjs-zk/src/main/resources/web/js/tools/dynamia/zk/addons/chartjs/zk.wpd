@@ -14,7 +14,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<package name="tools.dynamia.chartjs" language="xul/html" depends="zul,zul.wgt">
+<package name="tools.dynamia.zk.addons.chartjs" language="xul/html" depends="zul,zul.wgt">
     <script src="lib/Chart.bundle.min.js"/>
     <widget name="Chartjs"/>
 </package>

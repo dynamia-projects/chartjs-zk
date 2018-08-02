@@ -1,4 +1,4 @@
-tools.dynamia.chartjs.Chartjs = zk.$extends(zk.Widget, {
+tools.dynamia.zk.addons.chartjs.Chartjs = zk.$extends(zk.Widget, {
     _type: '',
     _data: '',
     _options: '',

@@ -1,5 +1,5 @@
-/*
- * Copyright 2016 Dynamia Soluciones IT.
+/* 
+ * Copyright 2016 Mario Serrano Leones.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,26 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package tools.dynamia.chartjs;
-
-import org.junit.Assert;
-import org.junit.Test;
+package tools.dynamia.zk.addons.chartjs;
 
 /**
  *
  * @author Mario Serrano Leones
  */
-public class ColorPaletteTest {
+public class BubbleCoordinate extends Coordinate {
 
-    @Test
-    public void neverNull() {
-        ChartjsColorPalette palette = new ChartjsColorPalette();
-
-        for (int i = 0; i < 100; i++) {
-            String color = palette.nextColor();
-            Assert.assertNotNull(color);
-            System.out.println("COLOR = " + color + "  i = " + i);
-        }
+    public BubbleCoordinate() {
     }
 
+    /**
+     * Create bubble coordinate using x, y and radius
+     *
+     * @param x
+     * @param y
+     * @param r radius
+     */
+    public BubbleCoordinate(Number x, Number y, Number r) {
+        super(x, y);
+        setR(r);
+    }
+
+    public Number getR() {
+        return (Number) get("r");
+    }
+
+    public void setR(Number r) {
+        put("r", r);
+    }
 }
