@@ -1,0 +1,56 @@
+<?page title="ChartJS for ZK 8.x" ?>
+<zk>
+
+    <div hflex="1" vflex="1" apply="org.zkoss.bind.BindComposer"
+         viewModel="@id('vm') @init('tools.dynamia.zk.addons.chartjsdemo.DemoViewModel')">
+        <tabbox height="90%" width="100%">
+            <toolbar>
+                <toolbarbutton label="Reload" onClick="@command('load')"/>
+            </toolbar>
+            <tabs>
+                <tab label="Bars"/>
+                <tab label="Pie and Doughnut "/>
+                <tab label="Horizontal Bar"/>
+                <tab label="Lines"/>
+                <tab label="XY Lines"/>
+                <tab label="Bubble"/>
+                <tab label="Scatter"/>
+                <tab label="Radar"/>
+            </tabs>
+            <tabpanels>
+                <tabpanel>
+                    <chartjs type="bar" title="Bar Chart" data="@load(vm.categoryModel)" width="60%"/>
+                </tabpanel>
+                <tabpanel>
+
+                    <chartjs type="pie" title="Pie Chart" data="@load(vm.categoryModel)" width="40%"/>
+                    <chartjs type="doughnut" title="Doughnut Chart" data="@load(vm.categoryModel)" width="40%"/>
+
+                </tabpanel>
+                <tabpanel>
+                    <chartjs type="horizontalBar" title="Horizontal Bar Chart" data="@load(vm.categoryModel)"
+                             width="60%"/>
+                </tabpanel>
+                <tabpanel>
+                    <chartjs type="line" title="Lines Chart" data="@load(vm.categoryModel)" width="60%"/>
+                </tabpanel>
+                <tabpanel>
+                    <!-- Check Options -->
+                    <chartjs type="line" title="XY Chart" data="@load(vm.xyModel)" options="@load(vm.xyOptions)" width="60%"/>
+                </tabpanel>
+                <tabpanel>
+                    <chartjs type="bubble" title="Bubble Chart" data="@load(vm.xyzModel)" width="60%"/>
+                </tabpanel>
+                <tabpanel>
+                    <chartjs type="scatter" title="Scatter Chart" data="@load(vm.xyModel)" width="60%"/>
+                </tabpanel>
+                <tabpanel>
+                    <chartjs type="radar" title="Radar Chart" data="@load(vm.radarModel)" width="60%"/>
+                </tabpanel>
+            </tabpanels>
+        </tabbox>
+        <hlayout>
+            <button label="Reload" onClick="@command('load')"/>
+        </hlayout>
+    </div>
+</zk>

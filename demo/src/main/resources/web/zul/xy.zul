@@ -1,0 +1,12 @@
+<?page title="ChartJS for ZK 8.x" ?>
+<zk>
+    <div hflex="1" vflex="1" apply="org.zkoss.bind.BindComposer"
+         viewModel="@id('vm') @init('tools.dynamia.zk.addons.chartjsdemo.DemoViewModel')">
+
+        <chartjs type="line" title="XY Chart" data="@bind(vm.xyModel)"/>
+
+        <hlayout>
+            <button labels="Reload" onClick="@command('load')"/>
+        </hlayout>
+    </div>
+</zk>
