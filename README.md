@@ -2,10 +2,14 @@
 
 This library let you use Chart.js v2.7.2 (https://github.com/chartjs/Chart.js) framework in ZK application using pure Java or ZUL. 
 
+Current Version: **2.7.2_R1**
+
+## Demo
+Please play with the **demo** to learn how to use the new api and all charts types.
+
 ## Bulding
 
 This is a regular maven project, download and build it using the following command:
-
 
 ```bash
 mvn clean install
@@ -21,13 +25,13 @@ Just add **chartjs-zk-xx.jar** to your project dependencies:
 <dependency>
     <groupId>tools.dynamia.zk.addons</groupId>
     <artifactId>chartjs-zk</artifactId>
-    <version>2.0.0</version>
+    <version>2.7.2_R1</version>
 </dependency>
 ```
 
 **Gradle**
 ```bash
-compile "tools.dynamia.zk.addons:chartjs-zk:1.0.0"
+compile "tools.dynamia.zk.addons:chartjs-zk:2.7.2_R1"
 ```
 
 ##Usage
@@ -96,7 +100,23 @@ ChartjsData class follow the same model as **chartjs** JSON data but with helper
  - polarArea
  - bubble 
 
-.
+## What's New ?
+
+### August 2018
+- New Java API for all configurations parameters in `ChartjsOptions`
+- `Dataset` now can use `Scales` (axis) from Java
+- `Dataset` has all chartjs properties
+- Builders for POJO Classes
+- New versioning system. First 3 numbers means the Chart.js version used. Identifier `_R1` means the release number of this project.
+- New GroupId `tools.dynamia.zk.addons`. We start developing new addons for zk
+- Fixes and clean code
+- Basic Demo
+
+## TODO
+
+- Perform more test
+- Deploy to maven central
+
 ## License
 
 Chartjs-ZK is available under the [Apache 2 License](https://github.com/dynamia-projects/chartjs-zk/blob/master/LICENSE.md).
