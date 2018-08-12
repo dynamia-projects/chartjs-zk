@@ -16,7 +16,7 @@ public class Axe extends LazyJSONObject {
     private boolean offset;
     private String id;
     private List<GridLine> gridLines = new ArrayList<GridLine>();
-    private List<Tick> ticks = new ArrayList<Tick>();
+    private Ticks ticks;
     private ScaleLabel scaleLabel;
 
 
@@ -25,9 +25,12 @@ public class Axe extends LazyJSONObject {
         return this;
     }
 
-    public Axe addTick(Tick tick) {
-        ticks.add(tick);
-        return this;
+    public Ticks getTicks() {
+        return ticks;
+    }
+
+    public void setTicks(Ticks ticks) {
+        this.ticks = ticks;
     }
 
     public Boolean getDisplay() {
@@ -78,13 +81,6 @@ public class Axe extends LazyJSONObject {
         this.gridLines = gridLines;
     }
 
-    public List<Tick> getTicks() {
-        return ticks;
-    }
-
-    public void setTicks(List<Tick> ticks) {
-        this.ticks = ticks;
-    }
 
     public ScaleLabel getScaleLabel() {
         return scaleLabel;
@@ -101,7 +97,7 @@ public class Axe extends LazyJSONObject {
         private boolean offset;
         private String id;
         private List<GridLine> gridLines = new ArrayList<GridLine>();
-        private List<Tick> ticks = new ArrayList<Tick>();
+        private Ticks ticks;
         private ScaleLabel scaleLabel;
 
         private Builder() {
@@ -141,7 +137,7 @@ public class Axe extends LazyJSONObject {
             return this;
         }
 
-        public Builder ticks(List<Tick> ticks) {
+        public Builder ticks(Ticks ticks) {
             this.ticks = ticks;
             return this;
         }
