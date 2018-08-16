@@ -16,36 +16,40 @@
                 <tab label="Bubble"/>
                 <tab label="Scatter"/>
                 <tab label="Radar"/>
+                <tab label="Java Only"/>
             </tabs>
             <tabpanels>
                 <tabpanel>
-                    <chartjs type="bar" title="Bar Chart" data="@load(vm.categoryModel)" width="60%"/>
+                    <chartjs type="bar" title="Bar Chart" data="@load(vm.categoryModel)" width="90%"/>
                 </tabpanel>
                 <tabpanel>
 
-                    <chartjs type="pie" title="Pie Chart" data="@load(vm.categoryModel)" width="40%"/>
-                    <chartjs type="doughnut" title="Doughnut Chart" data="@load(vm.categoryModel)" width="40%"/>
+                    <chartjs type="pie" title="Pie Chart" data="@load(vm.categoryModel)" width="50%"/>
+                    <chartjs type="doughnut" title="Doughnut Chart" data="@load(vm.categoryModel)" width="50%"/>
 
                 </tabpanel>
                 <tabpanel>
                     <chartjs type="horizontalBar" title="Horizontal Bar Chart" data="@load(vm.categoryModel)"
-                             width="60%"/>
+                             width="90%"/>
                 </tabpanel>
                 <tabpanel>
-                    <chartjs type="line" title="Lines Chart" data="@load(vm.categoryModel)" width="60%"/>
+                    <chartjs type="line" title="Lines Chart" data="@load(vm.categoryModel)" width="90%"/>
                 </tabpanel>
                 <tabpanel>
                     <!-- Check Options -->
-                    <chartjs type="line" title="XY Chart" data="@load(vm.xyModel)" options="@load(vm.xyOptions)" width="60%"/>
+                    <chartjs type="line" title="XY Chart" data="@load(vm.xyModel)" options="@load(vm.xyOptions)" width="90%"/>
                 </tabpanel>
                 <tabpanel>
-                    <chartjs type="bubble" title="Bubble Chart" data="@load(vm.xyzModel)" width="60%"/>
+                    <chartjs type="bubble" title="Bubble Chart" data="@load(vm.xyzModel)" width="90%"/>
                 </tabpanel>
                 <tabpanel>
-                    <chartjs type="scatter" title="Scatter Chart" data="@load(vm.xyModel)" width="60%"/>
+                    <chartjs type="scatter" title="Scatter Chart" data="@load(vm.xyModel)" width="90%"/>
                 </tabpanel>
                 <tabpanel>
-                    <chartjs type="radar" title="Radar Chart" data="@load(vm.radarModel)" width="60%"/>
+                    <chartjs type="radar" title="Radar Chart" data="@load(vm.radarModel)" width="90%"/>
+                </tabpanel>
+                <tabpanel>
+                   <div viewModel="@id('jm') @init('tools.dynamia.zk.addons.chartjsdemo.JavaOnlyChartDemo')" vflex="1"/>
                 </tabpanel>
             </tabpanels>
         </tabbox>
