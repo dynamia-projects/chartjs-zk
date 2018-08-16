@@ -105,6 +105,7 @@ public class Chartjs extends HtmlBasedComponent {
     @Override
     protected void renderProperties(ContentRenderer renderer) throws IOException {
         super.renderProperties(renderer);
+        LazyJSONObject.init(options);
         render(renderer, "type", type);
         render(renderer, "data", data);
         render(renderer, "options", options);
@@ -147,7 +148,6 @@ public class Chartjs extends HtmlBasedComponent {
             });
         }
     }
-
 
 
     protected void render(ContentRenderer renderer, String name, LazyJSONObject value) throws IOException {

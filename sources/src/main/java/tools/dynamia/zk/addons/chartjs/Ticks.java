@@ -17,7 +17,7 @@ public class Ticks extends LazyJSONObject {
    private Integer min;
    private Integer max;
    private Integer maxTicksLimit;
-   private Integer stepSize;
+   private Double stepSize;
    private Integer suggestedMax;
    private Integer suggestedMin;
 
@@ -101,11 +101,11 @@ public class Ticks extends LazyJSONObject {
         this.maxTicksLimit = maxTicksLimit;
     }
 
-    public Integer getStepSize() {
+    public Double getStepSize() {
         return stepSize;
     }
 
-    public void setStepSize(Integer stepSize) {
+    public void setStepSize(Double stepSize) {
         this.stepSize = stepSize;
     }
 
@@ -137,7 +137,7 @@ public class Ticks extends LazyJSONObject {
         private Integer min;
         private Integer max;
         private Integer maxTicksLimit;
-        private Integer stepSize;
+        private Double stepSize;
         private Integer suggestedMax;
         private Integer suggestedMin;
 
@@ -198,7 +198,7 @@ public class Ticks extends LazyJSONObject {
             return this;
         }
 
-        public Builder stepSize(Integer stepSize) {
+        public Builder stepSize(Double stepSize) {
             this.stepSize = stepSize;
             return this;
         }

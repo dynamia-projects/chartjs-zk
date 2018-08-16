@@ -29,10 +29,16 @@ public class Scales extends LazyJSONObject {
     @Override
     public void init() {
         if (!xAxes.isEmpty()) {
+            for (Axe axe : xAxes){
+                axe.init();
+            }
             put("xAxes", xAxes);
         }
 
         if (!yAxes.isEmpty()) {
+            for (Axe axe : yAxes){
+                axe.init();
+            }
             put("yAxes", yAxes);
         }
     }

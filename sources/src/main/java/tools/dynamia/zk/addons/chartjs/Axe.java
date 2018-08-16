@@ -25,6 +25,7 @@ public class Axe extends LazyJSONObject {
         return this;
     }
 
+
     public Ticks getTicks() {
         return ticks;
     }

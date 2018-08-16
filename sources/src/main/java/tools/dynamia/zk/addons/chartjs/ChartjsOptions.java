@@ -15,9 +15,7 @@
  */
 package tools.dynamia.zk.addons.chartjs;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -87,8 +85,57 @@ public class ChartjsOptions extends LazyJSONObject {
             scales.init();
             put("scales", scales);
         }
-
-
     }
 
+
+    public static final class Builder {
+        private String title;
+        private boolean responsive = true;
+        private Scales scales;
+        private Legend legend;
+        private Tooltips tooltips;
+
+        private Builder() {
+        }
+
+        public static Builder init() {
+            return new Builder();
+        }
+
+        public Builder title(String title) {
+            this.title = title;
+            return this;
+        }
+
+        public Builder responsive(boolean responsive) {
+            this.responsive = responsive;
+            return this;
+        }
+
+        public Builder scales(Scales scales) {
+            this.scales = scales;
+            return this;
+        }
+
+        public Builder legend(Legend legend) {
+            this.legend = legend;
+            return this;
+        }
+
+        public Builder tooltips(Tooltips tooltips) {
+            this.tooltips = tooltips;
+            return this;
+        }
+
+        public ChartjsOptions build() {
+            ChartjsOptions chartjsOptions = new ChartjsOptions();
+            chartjsOptions.setTitle(title);
+            chartjsOptions.setResponsive(responsive);
+            chartjsOptions.setScales(scales);
+            chartjsOptions.setLegend(legend);
+            chartjsOptions.setTooltips(tooltips);
+            chartjsOptions.init();
+            return chartjsOptions;
+        }
+    }
 }
