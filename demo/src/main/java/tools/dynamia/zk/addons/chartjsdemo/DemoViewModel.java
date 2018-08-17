@@ -2,11 +2,11 @@ package tools.dynamia.zk.addons.chartjsdemo;
 
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.NotifyChange;
-import org.zkoss.zk.ui.util.Clients;
 import tools.dynamia.zk.addons.chartjs.*;
 
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.IntStream;
 
 public class DemoViewModel {
 
@@ -17,6 +17,9 @@ public class DemoViewModel {
     private ChartjsData xyzModel;
     private ChartjsData radarModel;
     private ChartjsOptions xyOptions;
+
+
+    private ChartjsData mixedModel;
 
     public DemoViewModel() {
         load();
@@ -62,6 +65,7 @@ public class DemoViewModel {
         initCategoryModel();
         initXYModel();
         initRadarModel();
+        initMixedModel();
     }
 
 
@@ -150,6 +154,27 @@ public class DemoViewModel {
 
     }
 
+    private void initMixedModel() {
+        Dataset<Double> chartDataset1 = new Dataset<Double>();
+        chartDataset1.setLabel("Normal Curve");
+        chartDataset1.setType(Chartjs.TYPE_LINE);
+        chartDataset1.setFill(false);
+        IntStream.range(0, 100).mapToDouble(Double::new).forEach(chartDataset1::addData);
+
+        Dataset<Double> chartDataset2 = new Dataset<Double>();
+        chartDataset2.setLabel("Measured Values");
+        chartDataset2.setType(Chartjs.TYPE_SCATTER);
+        chartDataset2.setBackgroundColor("#ff0000");
+        chartDataset2.setFill(false);
+        IntStream.range(0, 20).mapToDouble(e -> Math.random() * 100).forEach(chartDataset2::addData);
+
+        ChartjsData chartData = new ChartjsData();
+        chartData.addDataset(chartDataset1);
+        chartData.addDataset(chartDataset2);
+        chartData.addDataset(getCategoryModel().getDataset());
+        this.mixedModel = chartData;
+    }
+
 
     public CategoryChartjsData getCategoryModel() {
         return categoryModel;
@@ -197,5 +222,13 @@ public class DemoViewModel {
 
     public void setXyOptions(ChartjsOptions xyOptions) {
         this.xyOptions = xyOptions;
+    }
+
+    public ChartjsData getMixedModel() {
+        return mixedModel;
+    }
+
+    public void setMixedModel(ChartjsData mixedModel) {
+        this.mixedModel = mixedModel;
     }
 }

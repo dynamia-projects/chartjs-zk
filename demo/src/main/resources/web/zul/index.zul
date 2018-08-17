@@ -3,7 +3,7 @@
 
     <div hflex="1" vflex="1" apply="org.zkoss.bind.BindComposer"
          viewModel="@id('vm') @init('tools.dynamia.zk.addons.chartjsdemo.DemoViewModel')">
-        <tabbox height="90%" width="100%">
+        <tabbox height="90%" width="100%" >
             <toolbar>
                 <toolbarbutton label="Reload" onClick="@command('load')"/>
             </toolbar>
@@ -17,6 +17,7 @@
                 <tab label="Scatter"/>
                 <tab label="Radar"/>
                 <tab label="Java Only"/>
+                <tab label="Mixed Chart"/>
             </tabs>
             <tabpanels>
                 <tabpanel>
@@ -50,6 +51,9 @@
                 </tabpanel>
                 <tabpanel>
                    <div viewModel="@id('jm') @init('tools.dynamia.zk.addons.chartjsdemo.JavaOnlyChartDemo')" vflex="1"/>
+                </tabpanel>
+                <tabpanel>
+                    <chartjs type="scatter" title="Mixed Chart" data="@load(vm.mixedModel)" width="90%"/>
                 </tabpanel>
             </tabpanels>
         </tabbox>
