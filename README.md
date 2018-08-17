@@ -34,7 +34,7 @@ Just add **chartjs-zk-xx.jar** to your project dependencies:
 compile "tools.dynamia.zk.addons:chartjs-zk:2.7.2_R1"
 ```
 
-##Usage
+## Usage
 
 From **zul**
 ```xml
@@ -138,7 +138,7 @@ ChartjsData class follow the same model as **chartjs** JSON data but with helper
 - New Java API for all configurations parameters in `ChartjsOptions`
 - `Dataset` now can use `Scales` (axis) from Java
 - `Dataset` has all chartjs properties
-- Builders for POJO Classes
+- Builders for POJO Classes (fluent api)
 - New versioning system. First 3 numbers means the Chart.js version used. Identifier `_R1` means the release number of this project.
 - New GroupId `tools.dynamia.zk.addons`. We start developing new addons for zk
 - Fixes and clean code
