@@ -1,3 +1,5 @@
+[![Maven Central](https://img.shields.io/maven-central/v/tools.dynamia.zk.addons/chartjs-zk.svg?label=Maven%20Central)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22tools.dynamia.zk.addons%22%20a%3A%22chartjs-zk%22)
+
 # Chart.js for ZK
 
 This library let you use Chart.js v2.7.2 (https://github.com/chartjs/Chart.js) framework in ZK application using pure Java or ZUL. 
@@ -143,7 +145,6 @@ ChartjsData class follow the same model as **chartjs** JSON data but with helper
 - New GroupId `tools.dynamia.zk.addons`. We start developing new addons for zk
 - Fixes and clean code
 - Basic Demo
-
 
 ## License
 
