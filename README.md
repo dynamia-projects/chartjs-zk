@@ -99,10 +99,42 @@ ChartjsData class follow the same model as **chartjs** JSON data but with helper
  - radar
  - polarArea
  - bubble 
+ 
+## Fluent API
+
+```java
+        CategoryChartjsData data = new CategoryChartjsData();
+        data.add("A", 11.1);
+        data.add("B", 22.2);
+        data.add("C", 33.3);
+        data.add("D", 44.4);
+        data.setDatasetLabel("The DataSet");
+
+        Chartjs chart = new Chartjs(Chartjs.TYPE_BAR);
+        chart.setData(data);
+        chart.setOptions(
+                ChartjsOptions.Builder.init()
+                        .scales(new Scales()
+                                .addY(Axe.Builder.init()
+                                        .scaleLabel(ScaleLabel.Builder.init()
+                                                .labelString("ChartJs For ZK")
+                                                .display(true)
+                                                .build()) // scale label
+                                        .ticks(Ticks.Builder.init()
+                                                .min(0)
+                                                .max(100)
+                                                .build()) // ticks
+                                        .build())) //Axe
+                        .build() // options
+        );
+        chart.setWidth("100%");
+        chart.setParent(parent);
+```
 
 ## What's New ?
 
-### August 2018
+### v2.7.2_R1
+- Upgrade to Chartjs 2.7.2
 - New Java API for all configurations parameters in `ChartjsOptions`
 - `Dataset` now can use `Scales` (axis) from Java
 - `Dataset` has all chartjs properties
@@ -112,10 +144,6 @@ ChartjsData class follow the same model as **chartjs** JSON data but with helper
 - Fixes and clean code
 - Basic Demo
 
-## TODO
-
-- Perform more test
-- Deploy to maven central
 
 ## License
 
