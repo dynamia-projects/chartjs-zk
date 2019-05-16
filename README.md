@@ -2,9 +2,9 @@
 
 # Chart.js for ZK
 
-This library let you use Chart.js v2.7.2 (https://github.com/chartjs/Chart.js) framework in ZK application using pure Java or ZUL. 
+This library let you use Chart.js v2.7.3 (https://github.com/chartjs/Chart.js) framework in ZK application using pure Java or ZUL. 
 
-Current Version: **2.7.2_R1**
+Current Version: **2.7.3**
 
 ## Demo
 Please play with the **demo** to learn how to use the new api and all charts types.
@@ -27,13 +27,13 @@ Just add **chartjs-zk-xx.jar** to your project dependencies:
 <dependency>
     <groupId>tools.dynamia.zk.addons</groupId>
     <artifactId>chartjs-zk</artifactId>
-    <version>2.7.2_R1</version>
+    <version>2.7.3</version>
 </dependency>
 ```
 
 **Gradle**
 ```bash
-compile "tools.dynamia.zk.addons:chartjs-zk:2.7.2_R1"
+compile "tools.dynamia.zk.addons:chartjs-zk:2.7.3"
 ```
 
 ## Usage
@@ -145,6 +145,9 @@ ChartjsData class follow the same model as **chartjs** JSON data but with helper
 - New GroupId `tools.dynamia.zk.addons`. We start developing new addons for zk
 - Fixes and clean code
 - Basic Demo
+
+### v2.7.3
+- Upgrade to Chartjs 2.7.3
 
 ## License
 
